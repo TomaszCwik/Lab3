@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include <iostream>
 using namespace std;
+
+
+
 class Punkt
 {
 private:
@@ -8,9 +11,10 @@ private:
 	float y;
 
 public:
+	Punkt wk(); //która zwraca wspó³rzêdne koñca wektora wyliczone na podstawie x,y,d,alfa. (2p)
 	Punkt(Punkt& przekazywany);
 	Punkt(float x=0, float y=0);
-	void dodaj(Punkt &p); 
+	void dodaj(Punkt &p); //Przedefiniowaæ metodê dodaj(Punkt &).(1p)
 	void dodaj(Punkt *p);
 	void drukuj();
 	~Punkt();
@@ -21,11 +25,6 @@ public:
 	bool  operator==(Punkt &p1);
 	Punkt operator+(Punkt &p1);
 	friend ostream& operator<<(ostream&, Punkt);
-
-	//Punkt operator<<(ostream & out, Punkt & p1);
-
-
-
 };
 
 class Tablica
@@ -35,7 +34,6 @@ private:
 	Punkt * w;
 	int dl;										// dlugoœæ Tablicy
 public:
-
 	Tablica(int dl );							// tworzy Tablice o zadanej d³ugoœci i wype³nia punktami (0,0)  (1p)
 	void  wypisz();
 	Tablica(Tablica &w_);						//inicjalizacja za pomoc¹ Tablicy w_ (2p)
@@ -45,5 +43,14 @@ public:
 	bool porownaj(Tablica &w);					// porownaie z Tablica w_; (2p)
 	bool operator==(Tablica &t1);
 	Tablica operator=(Tablica &t1);
+};
 
+
+class Wektor :public Punkt
+{
+private:
+	float d;
+	float alfa;
+public:
+	Wektor(float x, float  y, float  d, float  alfa);
 };

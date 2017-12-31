@@ -3,6 +3,24 @@
 #include <iostream>
 using namespace std;
 
+Wektor::Wektor(float x, float  y, float  d, float  alfa):Punkt(x,y)
+{
+	this->d = d;
+	this->alfa = alfa;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 Punkt::Punkt(float PunktX, float PunktY)
 {
 	//cout << "Wywolano kunstruktor z parametrami" << endl;
